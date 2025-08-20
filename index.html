@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <met charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wireless Headphones — Store</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+  --bg:#f7f8fb;
+  --surface:#ffffff;
+  --accent:#0f62fe;
+  --muted:#6b7280;
+  --radius:14px;
+  --max:1100px;
+  --container-padding:20px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg, var(--bg), #ffffff);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  font-size:16px;
+}
+
+.container{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:24px;
+}
+
+/* Header */
+.site-header{
+  background:transparent;
+  position:sticky;
+  top:0;
+  z-index:30;
+  backdrop-filter: blur(6px);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.brand{
+  font-weight:700;
+  color:var(--accent);
+  font-size:1.2rem;
+  text-decoration:none;
+}
+.nav{
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+.nav a{ text-decoration:none; color:var(--muted); font-weight:600}
+.nav .cta{ background:var(--accent); color:#fff; padding:10px 14px; border-radius:10px; text-decoration:none}
+.mobile-menu-toggle{display:none; background:none; border:none; font-size:20px}
+
+/* Hero */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:36px;
+  align-items:start;
+  padding-top:28px;
+  padding-bottom:28px;
+}
+.hero-left h1{font-size:2rem; margin:0 0 8px}
+.subtitle{color:var(--muted); margin-top:0}
+.product-badge{display:inline-block; background:#e8f0ff; color:var(--accent); padding:6px 10px; border-radius:999px; font-weight:600; margin-bottom:12px}
+
+.price-row{display:flex; align-items:center; gap:18px; margin:16px 0}
+.price{font-weight:800; font-size:1.8rem; display:flex; align-items:baseline; gap:4px}
+.currency{font-size:0.9rem; color:var(--muted)}
+.cents{font-size:0.9rem; color:var(--muted)}
+.actions{display:flex; gap:10px}
+.btn{border-radius:12px; padding:10px 14px; border:none; cursor:pointer; font-weight:700}
+.btn.primary{background:var(--accent); color:#fff}
+.btn.outline{background:transparent; border:1px solid #e6e9ef; color:var(--muted)}
+
+/* Product card */
+.product-card{background:var(--surface); border-radius:18px; padding:18px; box-shadow:0 8px 24px rgba(15,30,60,0.06)}
+.product-card img{width:100%; height:auto; border-radius:12px; display:block}
+.thumbnail-row{display:flex; gap:8px; margin-top:10px}
+.thumbnail-row img{width:64px; height:48px; object-fit:cover; border-radius:8px}
+
+/* Features */
+.features{margin-top:18px}
+.feature-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:12px}
+.feature-grid article{background:var(--surface); padding:18px; border-radius:12px; box-shadow:0 6px 18px rgba(10,15,40,0.04)}
+.feature-grid h3{margin:0 0 6px}
+
+/* Reviews */
+.reviews{margin-top:28px}
+.review-list{display:grid; gap:12px}
+.review{background:#fff; border-radius:12px; padding:14px; box-shadow:0 6px 18px rgba(10,15,40,0.03)}
+.r-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px}
+.stars{color:#F59E0B; font-weight:700}
+
+/* Details and footer */
+.details{margin:28px 0}
+.site-footer{background:#0f1724; color:#cbd5e1; padding:28px 0; margin-top:36px}
+.footer-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+.footer-grid h4{color:#fff}
+.footer-grid a{color:inherit; text-decoration:none}
+.social{list-style:none; padding:0; margin:0}
+
+/* Responsive */
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr}
+  .hero-right{order:-1}
+  .feature-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .nav{display:none}
+  .mobile-menu-toggle{display:block}
+  .nav.open{display:flex; position:absolute; top:68px; right:24px; background:var(--surface); padding:12px; border-radius:12px; box-shadow:0 8px 24px rgba(10,15,40,0.08); flex-direction:column}
+}
+</style>
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">AudioNova</a>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#buy" class="cta">Buy Now</a>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-left">
+        <div class="product-badge">Best Seller</div>
+        <h1>Wireless Noise‑Cancelling Headphones</h1>
+        <p class="subtitle">Immersive sound, comfortable fit, and 20‑hour battery life — engineered for listeners who demand the best.</p>
+
+        <div class="price-row" id="buy">
+          <div class="price">
+            <span class="currency">$</span><span class="amount">99</span><span class="cents">.99</span>
+          </div>
+          <div class="actions">
+            <button class="btn primary">Add to Cart</button>
+            <button class="btn outline">Wishlist</button>
+          </div>
+        </div>
+
+        <ul class="quick-features">
+          <li>Bluetooth 5.3</li>
+          <li>Hybrid Active Noise Cancelation</li>
+          <li>USB‑C Fast Charging</li>
+          <li>Multi‑device pairing</li>
+        </ul>
+
+        <div class="specs">
+          <p><strong>Color:</strong> Matte Black</p>
+          <p><strong>Warranty:</strong> 1 year manufacturer</p>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1518444020279-9f2b2d1f7b27?q=80&w=900&auto=format&fit=crop&sat=-20" alt="Wireless Headphones" />
+          <div class="thumbnail-row">
+            <img src="https://via.placeholder.com/80x60?text=1" alt="">
+            <img src="https://via.placeholder.com/80x60?text=2" alt="">
+            <img src="https://via.placeholder.com/80x60?text=3" alt="">
+          </div>
+        </div>
+
+        <div class="delivery">
+          <p><strong>Free shipping</strong> &amp; 30‑day returns</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="container features">
+      <h2>Features</h2>
+      <div class="feature-grid">
+        <article>
+          <h3>Premium Audio</h3>
+          <p>Custom tuned drivers deliver rich lows and crisp highs across genres.</p>
+        </article>
+        <article>
+          <h3>Comfort First</h3>
+          <p>Memory‑foam ear cushions and a lightweight headband for long listening sessions.</p>
+        </article>
+        <article>
+          <h3>Smart Controls</h3>
+          <p>Touch controls and voice assistant compatibility for seamless use.</p>
+        </article>
+        <article>
+          <h3>Durable Build</h3>
+          <p>Aluminum hinges and reinforced cable ports for longer life.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="reviews" class="container reviews">
+      <h2>Customer Reviews</h2>
+
+      <div class="review-list">
+        <div class="review">
+          <div class="r-head">
+            <strong>Alice J.</strong>
+            <div class="stars" aria-label="4 out of 5 stars">★★★★☆</div>
+          </div>
+          <p>Great sound and comfortable. Battery lasts a long time for my daily commute.</p>
+        </div>
+
+        <div class="review">
+          <div class="r-head">
+            <strong>Bob S.</strong>
+            <div class="stars" aria-label="3 out of 5 stars">★★★☆☆</div>
+          </div>
+          <p>Good value for money, but ANC could be stronger in noisy environments.</p>
+        </div>
+
+        <div class="review">
+          <div class="r-head">
+            <strong>Clara M.</strong>
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          </div>
+          <p>Absolutely love them — lightweight and the soundstage is impressive.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container details">
+      <h2>Product Description</h2>
+      <p>Our Wireless Headphones combine advanced acoustic engineering with premium materials to bring you a listening experience that’s both powerful and comfortable. Whether you’re working, traveling, or relaxing, enjoy clear calls, customizable EQ, and long battery life.</p>
+
+      <a class="btn outline" href="#buy">Buy Now</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong>AudioNova</strong>
+          <p>Quality audio gear designed for everyday listening.</p>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Warranty</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow</h4>
+          <ul class="social">
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">© <span id="year"></span> AudioNova — All rights reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    // Small JS for year and mobile menu
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('.nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
